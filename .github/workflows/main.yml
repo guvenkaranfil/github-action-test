@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: guvenkaranfil/hello-gh-action@v1.8
+        uses: guvenkaranfil/hello-gh-action@v1.9
         with:
           who-to-greet: "Mona the Octocat"
 
