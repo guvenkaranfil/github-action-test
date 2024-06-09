@@ -13,3 +13,8 @@ jobs:
 
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+      - name: Get the secrets
+        run: |
+          echo "The secret was ${{ secrets.AC_ACCESS_TOKEN }}"
+          echo ${{ secrets.AC_ACCESS_TOKEN }}
