@@ -11,6 +11,10 @@ jobs:
         with:
           who-to-greet: "Mona the Octocat"
       # Use the output from the `hello` step
+      - name: Confirm Secrets
+        run: |
+          echo "AC_ACCESS_TOKEN is set"
+
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
         env:
