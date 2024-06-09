@@ -22,4 +22,5 @@ jobs:
         env:
           AC_ACCESS_TOKEN: ${{ secrets.AC_ACCESS_TOKEN }}
         run: |
-          echo "$AC_ACCESS_TOKEN"
+          npm install -g @appcircle/cli
+          appcircle login --token $AC_ACCESS_TOKEN
