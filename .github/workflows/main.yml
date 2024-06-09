@@ -5,16 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      # Use the output from the `hello` step
-      - name: Confirm Secrets
-        run: |
-          echo "AC_ACCESS_TOKEN is set"
-          echo $AC_ACCESS_TOKEN
-        env:
-          AC_ACCESS_TOKEN: ${{ secrets.AC_ACCESS_TOKEN }}
       - name: Hello world action step
         id: hello
-        uses: guvenkaranfil/hello-gh-action@v1.5
+        uses: guvenkaranfil/hello-gh-action@v1.6
         with:
           who-to-greet: "Mona the Octocat"
 
