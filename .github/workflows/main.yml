@@ -9,6 +9,9 @@ jobs:
       - name: Confirm Secrets
         run: |
           echo "AC_ACCESS_TOKEN is set"
+          echo $AC_ACCESS_TOKEN
+        env:
+          AC_ACCESS_TOKEN: ${{ secrets.AC_ACCESS_TOKEN }}
       - name: Hello world action step
         id: hello
         uses: guvenkaranfil/hello-gh-action@v1.5
