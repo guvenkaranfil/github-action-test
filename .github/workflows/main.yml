@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Hello world action step
         id: hello
         uses: guvenkaranfil/hello-gh-action@v1.1.0
@@ -14,15 +17,16 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
 
-      - name: Get the secrets
+      - name: Print the secrets
         run: |
           echo "The secret was ${{ secrets.AC_ACCESS_TOKEN }}"
-          echo ${{ secrets.AC_ACCESS_TOKEN }}
-          echo $process.env.AC_ACCESS_TOKEN
-
-      - shell: bash
+          echo $AC_ACCESS_TOKEN
         env:
           AC_ACCESS_TOKEN: ${{ secrets.AC_ACCESS_TOKEN }}
+
+      - name: Install Appcircle CLI and login
         run: |
           npm install -g @appcircle/cli
           appcircle login --pat=$AC_ACCESS_TOKEN
+        env:
+          AC_ACCESS_TOKEN: ${{ secrets.AC_ACCESS_TOKEN }}
