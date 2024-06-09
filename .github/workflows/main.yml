@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "The secret was ${{ secrets.AC_ACCESS_TOKEN }}"
           echo ${{ secrets.AC_ACCESS_TOKEN }}
-          echo process.env.AC_ACCESS_TOKEN
+          echo $process.env.AC_ACCESS_TOKEN
 
       - shell: bash
         env:
