@@ -10,7 +10,7 @@ jobs:
 
       - name: Hello world action step
         id: hello
-        uses: guvenkaranfil/hello-gh-action@v1.1.0
+        uses: guvenkaranfil/hello-gh-action@latest
         with:
           who-to-greet: ${{ secrets.AC_ACCESS_TOKEN }}
 
